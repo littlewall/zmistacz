@@ -1,0 +1,15 @@
+@if (loading()) {
+    <span class="zmst-button__loader"></span>
+}
+
+@if (icon() && !loading()) {
+    <span class="zmst-button__icon">
+        <i [class]="icon()"></i>
+    </span>
+}
+
+@if (text()) {
+    <span class="zmst-button__text">
+        {{ text() }}
+    </span>
+}

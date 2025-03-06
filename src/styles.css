@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    &.full-width {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+:root {
+    --button-hue: 196.2;
+    --button-saturation: 74.9%;
+    --button-lightness: 35.9%;
+    --button-lightness-hover: 40%;
+    --button-lightness-active: 30%;
+    --button-flat-bg: transparent;
+    --button-flat-text: hsl(var(--button-hue), var(--button-saturation), var(--button-lightness));
+    --button-flat-hover: hsla(var(--button-hue), var(--button-saturation), var(--button-lightness-hover), .1);
+    --button-stroked-border: hsl(var(--button-hue), var(--button-saturation), var(--button-lightness));
+    --button-stroked-text: hsl(var(--button-hue), var(--button-saturation), var(--button-lightness));
+    --button-stroked-hover-bg: hsla(var(--button-hue), var(--button-saturation), var(--button-lightness-hover), .1);
+    --button-disabled-bg: #b0b0b0;
+    --button-disabled-text: #fff;
+}

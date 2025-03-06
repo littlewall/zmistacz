@@ -1,0 +1,21 @@
+.main {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: block;
+    font-family: var(--zmst-font-family, 'Roboto', sans-serif);
+    color: var(--zmst-text-color, #333);
+    background-color: var(--zmst-background-color, #fff);
+}
+
+.main__wrapper {
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+    display: block;
+    height: 100%;
+}
+
+.content {
+    min-height: calc(100vh - 140px);
+}

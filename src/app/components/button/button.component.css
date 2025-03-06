@@ -1,0 +1,109 @@
+
+.zmst-button {
+    pointer-events: auto;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 1rem;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 1;
+    background-color: hsla(var(--button-hue), var(--button-saturation), var(--button-lightness), 1);
+    border: 1px solid transparent;
+    border-radius: .375rem;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: 150ms;
+    transition-property: color, background-color, border-color, box-shadow;
+}
+
+.zmst-button:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: hsla(var(--button-hue), var(--button-saturation), var(--button-lightness-hover), 1);
+}
+
+.zmst-button:focus {
+    color: #fff;
+    box-shadow: 0 0 0 3px hsla(var(--button-hue), var(--button-saturation), var(--button-lightness), .25);
+}
+
+.zmst-button:active {
+    color: #fff;
+    background-color: hsla(var(--button-hue), var(--button-saturation), var(--button-lightness-active), 1);
+}
+
+.zmst-button--flat {
+    background-color: var(--button-flat-bg);
+
+    & .zmst-button__text {
+        color: var(--button-flat-text);
+    }
+}
+
+.zmst-button--flat:hover {
+    color: var(--button-flat-text);
+    background-color: var(--button-flat-hover);
+
+    & .zmst-button__text {
+        color: var(--button-flat-text);
+    }
+}
+
+.zmst-button--stroked {
+    color: var(--button-stroked-text);
+    background-color: transparent;
+    border: 1px solid var(--button-stroked-border);
+}
+
+.zmst-button--stroked:hover {
+    background-color: var(--button-stroked-hover-bg);
+}
+
+.zmst-button--raised {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.zmst-button--with-icon {
+    display: flex;
+    gap: 8px;
+}
+
+.zmst-button--icon-only {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+.zmst-button--loading {
+    pointer-events: none;
+    position: relative;
+    opacity: .6;
+}
+
+.zmst-button--loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+
+.zmst-button[disabled] {
+    pointer-events: none;
+    color: var(--button-disabled-text);
+    opacity: .6;
+    background-color: var(--button-disabled-bg);
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
